@@ -14,24 +14,24 @@ on:
     
 jobs: 
     build:
-    runs-on: ubuntu-latest
+      runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
 
-      - name: Set up environment variables
-        run: |
-          echo "EVENT_NAME=${{ github.event_name }}" >> $GITHUB_ENV
-          echo "BRANCH_NAME=${{ github.ref }}" >> $GITHUB_ENV
+        - name: Set up environment variables
+          run: |
+            echo "EVENT_NAME=${{ github.event_name }}" >> $GITHUB_ENV
+            echo "BRANCH_NAME=${{ github.ref }}" >> $GITHUB_ENV
 
-    #  - name: Output event name
-    #    run: echo "Event name: ${{ env.EVENT_NAME }}"
+      #  - name: Output event name
+      #    run: echo "Event name: ${{ env.EVENT_NAME }}"
 
-    #  - name: Output branch name
-    #    run: echo "Branch name: $BRANCH_NAME"
+      #  - name: Output branch name
+      #    run: echo "Branch name: $BRANCH_NAME"
 
-      - name: List repository files
-        run: ls -R
+        - name: List repository files
+          run: ls -R
    
   
